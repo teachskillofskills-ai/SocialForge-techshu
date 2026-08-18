@@ -1,13 +1,13 @@
 {
   "name": "socialforge",
   "version": "1.25.1",
-  "description": "Open-source social media engine — 20 skills, asset-first compositing, AI image+video, 9-platform copy adaptation. Runs on Claude Code, Codex, Cursor, Antigravity.",
+  "description": "Social media engine for TechShu delivery teams — 20 skills, asset-first compositing, AI image+video, 9-platform copy adaptation. Runs on Claude Code, Codex, Cursor, Antigravity.",
   "author": {
-    "name": "Indranil Banerjee",
-    "url": "https://github.com/indranilbanerjee"
+    "name": "Indus Net TechShu Digital Pvt. Ltd.",
+    "url": "https://github.com/teachskillofskills-ai"
   },
-  "homepage": "https://github.com/indranilbanerjee/socialforge",
-  "repository": "https://github.com/indranilbanerjee/socialforge.git",
+  "homepage": "https://github.com/teachskillofskills-ai/SocialForge-techshu",
+  "repository": "https://github.com/teachskillofskills-ai/SocialForge-techshu.git",
   "license": "MIT",
   "keywords": [
     "social-media",
@@ -55,7 +55,6 @@
     "openai-codex",
     "google-antigravity",
     "gemini-extension",
-    "mcp",
-    "neelverse"
+    "mcp"
   ]
 }

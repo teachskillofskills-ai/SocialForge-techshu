@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New `.grok-plugin/plugin.json` (mirrors the Claude manifest + the
   `"skills": "./skills/"` pointer Grok's loader uses) and
   `.grok-plugin/marketplace.json` (single-plugin marketplace source), so
-  `grok plugin install indranilbanerjee/socialforge` works directly. Grok also
+  `grok plugin install teachskillofskills-ai/SocialForge-techshu` works directly. Grok also
   reads the Claude Code manifests for compatibility
   ([Grok Build docs](https://docs.x.ai/build/features/skills-plugins-marketplaces));
   the native pair is the first-class lane.
@@ -784,14 +784,14 @@ Brings SocialForge into parity with DMP v3.13.0+ on cross-platform support. Ever
 
 - **`plugin.yaml`** at repo root with required fields (name, version, description, author, license, homepage). Zero env vars, zero global hooks.
 - **`__init__.py`** at repo root exposing `register(ctx)` that Hermes calls at plugin load. Walks the `skills/` directory and exposes all 16 SocialForge skills via `ctx.register_skill(name, path)`. Defensive coding throughout — stdlib only; if Hermes API differs from spec, the adapter logs and degrades gracefully instead of crashing. Includes an `audit()` introspection function for pre-install sanity checks.
-- Install command: `hermes plugins install indranilbanerjee/socialforge`.
+- Install command: `hermes plugins install teachskillofskills-ai/SocialForge-techshu`.
 - Spec source: https://hermes-agent.nousresearch.com/docs/guides/build-a-hermes-plugin
 - Targets Hermes Desktop v0.15.2 (public preview June 2 2026).
 
 ### Added — Native OpenClaw manifest
 
 - **`openclaw.plugin.json`** at repo root with required `id` + `configSchema`, optional `name`/`description`/`version`/`skills: ["./skills"]`. OpenClaw auto-detects our existing `.claude-plugin/plugin.json` as a Claude-compatible bundle fallback, but shipping the native manifest enables ClawHub marketplace eligibility + first-class discoverability.
-- Install command: `openclaw plugins install git:github.com/indranilbanerjee/socialforge`.
+- Install command: `openclaw plugins install git:github.com/teachskillofskills-ai/SocialForge-techshu`.
 - Spec source: https://docs.openclaw.ai/plugins/manifest
 
 ### Added — Test suite (0 → 23, all passing)
@@ -838,7 +838,7 @@ Sources: [C2PA 2.3 launch post 9 Feb 2026](https://c2pa.org/the-c2pa-launches-co
 ### How to update
 
 ```bash
-/plugin update socialforge@neels-plugins
+/plugin update socialforge@techshu
 /reload-plugins
 ```
 
@@ -870,7 +870,7 @@ If on Cowork / claude.ai / Desktop: Plugins panel → Update.
 ### How to update
 
 ```bash
-/plugin update socialforge@neels-plugins
+/plugin update socialforge@techshu
 /reload-plugins
 ```
 
@@ -1004,7 +1004,7 @@ Honest position from v1.8.5 onwards: **Claude Code (CLI + IDE extensions) + Anth
 
 ## [1.8.2] - 2026-05-25
 
-**Model curator + correctness sweep.** Adds shared model-selection infrastructure used across the Neelverse Marketing Suite, eliminates several hardcoded deprecated model ids, and fixes URLs / slash refs.
+**Model curator + correctness sweep.** Adds shared model-selection infrastructure used across the TechShu Marketing Suite, eliminates several hardcoded deprecated model ids, and fixes URLs / slash refs.
 
 ### Added
 
@@ -1035,22 +1035,22 @@ Honest position from v1.8.5 onwards: **Claude Code (CLI + IDE extensions) + Anth
 
 ### Added
 
-- **`CODE_OF_CONDUCT.md`** (Contributor Covenant v2.1, adapted for the Neelverse Marketing Suite scope)
+- **`CODE_OF_CONDUCT.md`** (Contributor Covenant v2.1, adapted for the TechShu Marketing Suite scope)
 - **`SECURITY.md`** with supported-versions table (1.8.x ✅, 1.7.x ⚠️, < 1.7 ❌), private-vulnerability-reporting flow via GitHub Private Security Advisories, coordinated-disclosure timeline, operator hardening recommendations
 - **`.github/PULL_REQUEST_TEMPLATE.md`** — 5-platform coverage checklist, version-bump-in-all-sibling-manifests reminder
 - **`.github/ISSUE_TEMPLATE/`** with `bug_report.md` and `feature_request.md`
 - **Star History chart** in README — visual social proof via star-history.com
 - **"5 coding-agent surfaces" install matrix** at top of README
-- **"About the maintainer" section** with [indranil.in](https://indranil.in), [linkedin.com/in/askneelnow](https://www.linkedin.com/in/askneelnow), [@askneelnow](https://x.com/askneelnow), other Neelverse plugins, Discussions, Issues, Security
+- **"About the maintainer" section** with the author website, LinkedIn and X links, other TechShu plugins, Discussions, Issues, Security
 - **"Contributing" section** in README references CoC + PR template + SECURITY.md explicitly
 - **⭐ Star CTAs** at hero, maintainer section, and footer
 
 ### Changed
 
 - **Hero rewritten** — leads with "Open-source agency-grade social media production engine" positioning, badges row (version 1.8.1, license, stars, forks, issues, last-commit, Cowork-compatible, EU AI Act Article 50 ready, 5 platforms), install command at top
-- **plugin.json description** rewritten to be 1700+ chars covering the four creative modes, Vertex AI Nano Banana Pro + WaveSpeed Kling v3.0 Pro stack, 5-platform install matrix, May 2026 channel pack, indranil.in attribution
+- **plugin.json description** rewritten to be 1700+ chars covering the four creative modes, Vertex AI Nano Banana Pro + WaveSpeed Kling v3.0 Pro stack, 5-platform install matrix, May 2026 channel pack, techshu.ai attribution
 - **plugin.json keywords expanded 17 → 47** for Claude marketplace + Codex/Cursor/Copilot directory search. Added: `social-media-automation`, `social-media-marketing`, `content-production`, `ai-image`, `ai-video`, `vertex-ai`, `nano-banana-pro`, `kling-v3`, `wavespeed`, `veo-3`, `runway-gen-4`, `carousel-generator`, `brand-guidelines`, `agency-operations`, `marketing-automation`, `marketing-plugin`, `ai-marketing`, `synthid`, `article-50`, `deepfake-disclosure`, `instagram`, `tiktok`, `linkedin`, `threads`, `claude-code-plugin`, `claude-skills`, `agent-skills`, `openai-codex`, `cursor-plugin`, `github-copilot`, `antigravity`, `mcp`, `neelverse`.
-- **Neelverse Marketing Suite table** corrected: DMP "149 skills" → "150 skills"; ContentForge description expanded to mention fact-checker + humanizer + C2PA `.docx` signing
+- **TechShu Marketing Suite table** corrected: DMP "149 skills" → "150 skills"; ContentForge description expanded to mention fact-checker + humanizer + C2PA `.docx` signing
 
 ### Fixed
 
@@ -1080,7 +1080,7 @@ Honest position from v1.8.5 onwards: **Claude Code (CLI + IDE extensions) + Anth
 
 ### Added
 
-- **GitHub Copilot CLI compatibility — no new manifest needed.** Copilot CLI's plugin discovery explicitly accepts `.claude-plugin/plugin.json` as one of its manifest paths. SocialForge's existing Claude Code manifest is directly readable by Copilot CLI. Install: `copilot plugin install indranilbanerjee/socialforge`. The MCP catalog (8 of 10 connectors — Gmail + Google Calendar are Anthropic-hosted), `hooks/hooks.json`, and SKILL.md auto-discovery all work natively. Credentials use shell env vars instead of `/sf:setup`.
+- **GitHub Copilot CLI compatibility — no new manifest needed.** Copilot CLI's plugin discovery explicitly accepts `.claude-plugin/plugin.json` as one of its manifest paths. SocialForge's existing Claude Code manifest is directly readable by Copilot CLI. Install: `copilot plugin install teachskillofskills-ai/SocialForge-techshu`. The MCP catalog (8 of 10 connectors — Gmail + Google Calendar are Anthropic-hosted), `hooks/hooks.json`, and SKILL.md auto-discovery all work natively. Credentials use shell env vars instead of `/sf:setup`.
 - **`.antigravity/plugin.json`** — Experimental manifest for Google Antigravity 2.0 CLI (launched 19 May 2026, replacing Gemini CLI). Mirrors the Gemini-CLI-extensions format that Antigravity's `agy plugin import gemini` converter accepts. Includes `_status` field flagging the experimental nature.
 - **`docs/CROSS-PLATFORM-GUIDE.md` — expanded** to cover all 5 platforms with install commands, what works natively per platform, credential persistence per platform (Claude Code's `/sf:setup` is Claude-Code-specific; Codex uses its secret store; Cursor uses workspace env vars; Copilot CLI uses shell env vars; Antigravity uses its secret store), update commands per platform, and where to file platform-specific bugs.
 
@@ -1132,7 +1132,7 @@ Self-contained C2PA signing — SF does NOT depend on `digital-marketing-pro` be
 
 #### `/socialforge:c2pa-sign` skill (NEW)
 
-`skills/c2pa-sign/SKILL.md` — usage examples, AI claim values, signing-cert guidance (CAI-recognized authority for prod, auto-generated 90-day self-signed cert for dev), Neelverse Suite integration.
+`skills/c2pa-sign/SKILL.md` — usage examples, AI claim values, signing-cert guidance (CAI-recognized authority for prod, auto-generated 90-day self-signed cert for dev), TechShu Suite integration.
 
 #### `scripts/generate_image.py` (MODIFIED)
 
@@ -1192,7 +1192,7 @@ The v1.5.1 manifest hardening introduced two fields that Claude Code's plugin sc
 
 #### Changes
 
-- **`repository` field**: converted from npm-shorthand object form (`{type: "git", url: "..."}`) to the string URL form Claude Code's plugin schema requires. New value: `"https://github.com/indranilbanerjee/socialforge.git"`.
+- **`repository` field**: converted from npm-shorthand object form (`{type: "git", url: "..."}`) to the string URL form Claude Code's plugin schema requires. New value: `"https://github.com/teachskillofskills-ai/SocialForge-techshu.git"`.
 - **`$schema` field removed**: Claude Code's plugin schema parser rejects this top-level key. Editor validation benefit isn't worth a broken install.
 
 Same fixes shipped same-day to ContentForge v3.9.2, digital-marketing-pro v3.2.1, and marketplace v2.8.0.

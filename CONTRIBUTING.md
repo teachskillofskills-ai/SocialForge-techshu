@@ -13,7 +13,7 @@ Thank you for your interest in contributing to SocialForge!
 
 ### Reporting Bugs
 
-1. Check existing [GitHub Issues](https://github.com/indranilbanerjee/socialforge/issues) first
+1. Check existing [GitHub Issues](https://github.com/teachskillofskills-ai/SocialForge-techshu/issues) first
 2. Create a new issue with:
    - **What happened** (actual behavior)
    - **What you expected** (expected behavior)
@@ -38,7 +38,7 @@ Thank you for your interest in contributing to SocialForge!
 ## Development Setup
 
 ```bash
-git clone https://github.com/indranilbanerjee/socialforge.git
+git clone https://github.com/teachskillofskills-ai/SocialForge-techshu.git
 cd socialforge
 pip install Pillow  # Minimum for image scripts
 # Optional: pip install rembg playwright google-genai imageio-ffmpeg

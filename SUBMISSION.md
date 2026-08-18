@@ -7,9 +7,9 @@
 
 **Plugin:** SocialForge
 **Version at submission:** 1.13.1
-**Submitter:** Indranil Banerjee — neel@neelverse.com
-**Repository:** https://github.com/indranilbanerjee/socialforge
-**Marketplace:** https://github.com/indranilbanerjee/neels-plugins
+**Submitter:** Indus Net TechShu Digital Pvt. Ltd.
+**Repository:** https://github.com/teachskillofskills-ai/SocialForge-techshu
+**Marketplace:** https://github.com/teachskillofskills-ai/techshu-marketplace
 **Last updated:** 2026-07-29
 
 This file is the submission packet for the Anthropic Software Directory. It is **not** the directory listing — that is submitted via https://platform.claude.com/plugins/submit. This packet pre-stages every input the form will ask for so submission takes ~5 minutes.
@@ -109,14 +109,14 @@ Renders multi-page LinkedIn carousels (PDF) with consistent brand application, o
 
 ## 6. Testing account / sample data
 
-**Testing account:** Reviewers install from `indranilbanerjee/neels-plugins` and use `references/brand-config-schema.md` as the brand profile template. The plugin requires Google Cloud Vertex AI credentials and a WaveSpeed API key for the AI generation paths; `references/image-gen-guide.md` and the README's Admin Setup section walk through credential acquisition. For evaluation without API keys, the `--placeholder` mode in `generate_image.py` produces a Pillow-rendered placeholder demonstrating the workflow shape without making external API calls.
+**Testing account:** Reviewers install from `teachskillofskills-ai/techshu-marketplace` and use `references/brand-config-schema.md` as the brand profile template. The plugin requires Google Cloud Vertex AI credentials and a WaveSpeed API key for the AI generation paths; `references/image-gen-guide.md` and the README's Admin Setup section walk through credential acquisition. For evaluation without API keys, the `--placeholder` mode in `generate_image.py` produces a Pillow-rendered placeholder demonstrating the workflow shape without making external API calls.
 
 **Sample worked output:** the repo ships no bundled brand photo library (brand assets are customer IP). To evaluate the compositing pattern without credentials or your own photos, run `generate_image.py --placeholder`, which renders a Pillow placeholder through the same pipeline shape. `assets/carousel-templates/` contains the 8 shipped carousel templates, which render end-to-end via Playwright with no API key at all.
 
 ## 7. Ownership verification
 
-- **Repo:** github.com/indranilbanerjee/socialforge — owned by @indranilbanerjee
-- **Marketplace:** github.com/indranilbanerjee/neels-plugins — same owner
+- **Repo:** github.com/teachskillofskills-ai/SocialForge-techshu — owned by the GitHub organisation account @teachskillofskills-ai
+- **Marketplace:** github.com/teachskillofskills-ai/techshu-marketplace — same owner
 - **Third-party services referenced:** Google Cloud (Vertex AI / Gemini), WaveSpeed (Kling), HiggsField (Soul / Kling fallback), fal.ai (Flux + 100s of models), Replicate (fallback), Notion, Canva, Slack, Gmail, Google Calendar, Figma, Asana, Cloudinary. All accessed via official endpoints; no scraping, no credential interception.
 - **Trademarks:** "SocialForge" is the submitter's mark.
 
@@ -166,7 +166,7 @@ Capture before submitting:
 
 1. Open https://platform.claude.com/plugins/submit
 2. Plugin name: `socialforge`
-3. Marketplace source: `github.com/indranilbanerjee/neels-plugins` (custom marketplace) OR `github.com/indranilbanerjee/socialforge` (direct repo)
+3. Marketplace source: `github.com/teachskillofskills-ai/techshu-marketplace` (custom marketplace) OR `github.com/teachskillofskills-ai/SocialForge-techshu` (direct repo)
 4. Paste section 1 into Short description
 5. Paste section 2 into Description
 6. Category: Marketing & Sales (primary), Productivity (secondary)

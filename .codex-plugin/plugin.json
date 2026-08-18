@@ -1,13 +1,13 @@
 {
   "name": "socialforge",
   "version": "1.25.1",
-  "description": "Open-source social media engine — 20 skills, asset-first compositing, AI image+video, 9-platform copy adaptation. Runs on Claude Code, Codex, Cursor, Antigravity.",
+  "description": "Social media engine for TechShu delivery teams — 20 skills, asset-first compositing, AI image+video, 9-platform copy adaptation. Runs on Claude Code, Codex, Cursor, Antigravity.",
   "author": {
-    "name": "Indranil Banerjee",
-    "url": "https://github.com/indranilbanerjee"
+    "name": "Indus Net TechShu Digital Pvt. Ltd.",
+    "url": "https://github.com/teachskillofskills-ai"
   },
-  "homepage": "https://github.com/indranilbanerjee/socialforge",
-  "repository": "https://github.com/indranilbanerjee/socialforge",
+  "homepage": "https://github.com/teachskillofskills-ai/SocialForge-techshu",
+  "repository": "https://github.com/teachskillofskills-ai/SocialForge-techshu",
   "license": "MIT",
   "keywords": [
     "social-media",
@@ -24,15 +24,15 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "SocialForge",
-    "shortDescription": "Open-source social media engine — 20 skills, asset-first compositing, AI image+video, 9-platform copy adaptation. Runs on Claude Code, Codex, Cursor, Antigravity.",
+    "shortDescription": "Social media engine for TechShu delivery teams — 20 skills, asset-first compositing, AI image+video, 9-platform copy adaptation. Runs on Claude Code, Codex, Cursor, Antigravity.",
     "longDescription": "20 skills + 25 commands + 5 agents + 25 scripts + 10 HTTP MCP connectors. Asset-first compositing (brand assets are sacred, AI is the creative layer around them). AI image (Vertex AI Nano Banana Pro), AI video (WaveSpeed Kling v3.0 Pro), 9-platform copy adaptation (Instagram, TikTok, LinkedIn, Threads, X, Facebook, YouTube Shorts), human-in-the-loop review galleries, C2PA content provenance signing for EU AI Act Article 50. Portable across Claude Code, Codex, Cursor, and Antigravity via the Agent Skills open standard.",
-    "developerName": "Indranil Banerjee",
+    "developerName": "Indus Net TechShu Digital Pvt. Ltd.",
     "category": "Productivity",
     "capabilities": [
       "Read",
       "Write"
     ],
-    "websiteURL": "https://indranil.in",
+    "websiteURL": "https://techshu.ai",
     "defaultPrompt": [
       "Set up a new brand for social media production.",
       "Index a brand's photo library so AI can match assets to upcoming posts.",

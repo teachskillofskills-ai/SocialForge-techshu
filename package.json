@@ -1,16 +1,16 @@
 {
-  "name": "@indranilbanerjee/socialforge",
+  "name": "@techshu/socialforge",
   "version": "1.25.1",
   "description": "Open-source agency-grade social media production plugin — 20 skills, 25 commands, asset-first compositing, AI image (Nano Banana Pro) + AI video (Kling v3.0 Pro), C2PA signing. Native on Claude Code, Cowork, Codex, Cursor, Copilot CLI, Antigravity, Hermes Agent, OpenClaw.",
   "license": "MIT",
-  "homepage": "https://github.com/indranilbanerjee/socialforge",
+  "homepage": "https://github.com/teachskillofskills-ai/SocialForge-techshu",
   "repository": {
     "type": "git",
-    "url": "https://github.com/indranilbanerjee/socialforge.git"
+    "url": "https://github.com/teachskillofskills-ai/SocialForge-techshu.git"
   },
   "author": {
-    "name": "Indranil Banerjee",
-    "url": "https://indranil.in"
+    "name": "Indus Net TechShu Digital Pvt. Ltd.",
+    "url": "https://techshu.ai"
   },
   "keywords": [
     "claude-code",
@@ -31,8 +31,12 @@
   ],
   "openclaw": {
     "type": "bundle",
-    "extensions": ["./skills/"],
-    "skills": ["./skills"],
+    "extensions": [
+      "./skills/"
+    ],
+    "skills": [
+      "./skills"
+    ],
     "compat": {
       "pluginApi": ">=2026.3.24-beta.2"
     },

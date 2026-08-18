@@ -23,11 +23,11 @@
 ## 2. Installation Tests
 
 ### Marketplace Install
-- [ ] `claude plugin marketplace add indranilbanerjee/neels-plugins` succeeds | No errors
-- [ ] `claude plugin install socialforge@neels-plugins` succeeds | Plugin appears in installed list
+- [ ] `claude plugin marketplace add teachskillofskills-ai/techshu-marketplace` succeeds | No errors
+- [ ] `claude plugin install socialforge@techshu` succeeds | Plugin appears in installed list
 
 ### GitHub Install
-- [ ] `claude plugin install github:indranilbanerjee/socialforge` succeeds | Plugin appears in installed list
+- [ ] `claude plugin install github:teachskillofskills-ai/SocialForge-techshu` succeeds | Plugin appears in installed list
 
 ### Local Install
 - [ ] `claude plugins add /path/to/socialforge` succeeds | Plugin appears in installed list

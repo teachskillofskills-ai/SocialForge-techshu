@@ -4,38 +4,31 @@
 
 Run `/socialforge:new-month` → `/socialforge:generate-all` → `/socialforge:review`. Asset-first compositing keeps brand photos pixel-faithful while AI generates the scene around them. Per-platform copy adaptation handles Instagram + TikTok + LinkedIn + Threads + X + Facebook + YouTube Shorts in one pass. C2PA signing happens before review. No more "AI enhanced our logo into something else" disasters.
 
-Open-source agency-grade social media production engine — **20 skills · 25 commands · 5 agents · 28 scripts · an opt-in catalog of 10 HTTP connectors (zero auto-connected) · 0 global hooks**. AI image (Vertex AI Nano Banana Pro), AI video (WaveSpeed Kling v3.0 Pro), human-in-the-loop review galleries. Built for agencies and in-house teams running monthly content calendars. Installs on **Claude Code** (CLI + IDE), **Anthropic Cowork**, **OpenAI Codex**, **Cursor 2.5+**, **GitHub Copilot CLI**, **Google Antigravity 2.0**, **Hermes Agent**, and **OpenClaw** + 35+ Agent Skills platforms. Created by [Indranil Banerjee](https://indranil.in) · [LinkedIn](https://www.linkedin.com/in/askneelnow/) · [X](https://x.com/askneelnow).
+Open-source agency-grade social media production engine — **20 skills · 25 commands · 5 agents · 28 scripts · an opt-in catalog of 10 HTTP connectors (zero auto-connected) · 0 global hooks**. AI image (Vertex AI Nano Banana Pro), AI video (WaveSpeed Kling v3.0 Pro), human-in-the-loop review galleries. Built for agencies and in-house teams running monthly content calendars. Installs on **Claude Code** (CLI + IDE), **Anthropic Cowork**, **OpenAI Codex**, **Cursor 2.5+**, **GitHub Copilot CLI**, **Google Antigravity 2.0**, **Hermes Agent**, and **OpenClaw** + 35+ Agent Skills platforms.
 
 [![Version](https://img.shields.io/badge/version-1.25.1-blue.svg)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/indranilbanerjee/socialforge?style=flat&logo=github&color=yellow)](https://github.com/indranilbanerjee/socialforge/stargazers)
-[![Forks](https://img.shields.io/github/forks/indranilbanerjee/socialforge?style=flat&logo=github&color=blue)](https://github.com/indranilbanerjee/socialforge/network/members)
-[![Issues](https://img.shields.io/github/issues/indranilbanerjee/socialforge?logo=github)](https://github.com/indranilbanerjee/socialforge/issues)
-[![Last commit](https://img.shields.io/github/last-commit/indranilbanerjee/socialforge?logo=github)](https://github.com/indranilbanerjee/socialforge/commits/main)
 [![Tests](https://img.shields.io/badge/tests-260%2F260%20passing-brightgreen.svg)](tests/)
 [![Platforms](https://img.shields.io/badge/platforms-9%20native%20%2B%2035%20Agent%20Skills-success.svg)](#supported-surfaces-v1251)
 [![Cowork](https://img.shields.io/badge/cowork-compatible-purple.svg)](#supported-surfaces-v1251)
 [![EU AI Act](https://img.shields.io/badge/EU%20AI%20Act-Article%2050%20ready-darkred.svg)](references/c2pa-production-cert.md)
-[![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/indranilbanerjee)
 
-> 🆕 **Just shipped — v1.25.1 (August 17, 2026): schema-clean hooks manifest.** The `_readme` rationale field in `hooks/hooks.json` failed Cowork's plugin validation ([digital-marketing-pro#9](https://github.com/indranilbanerjee/digital-marketing-pro/issues/9)); the rationale now lives in `hooks/README.md`, the manifest is exactly `{"hooks": {}}`, and a guard pins it. 20 skills, 260 tests. Previously — **v1.25.0 (August 17, 2026): Grok (xAI Build CLI) becomes the ninth native platform.** A first-class `.grok-plugin/` manifest pair — `plugin.json` with the `"skills"` pointer Grok's loader reads, plus a single-plugin `marketplace.json` — makes `grok plugin install indranilbanerjee/socialforge` work directly ([Grok Build](https://docs.x.ai/build/features/skills-plugins-marketplaces) also reads the Claude Code manifests for compatibility; the native pair is what an official xAI marketplace listing points at). Both files are version-locked into the release-consistency suite, and Grok joins every platform-name guard. 20 skills, 258 tests. Previously — **v1.24.2 (August 16, 2026): the documentation truth pass.** A from-zero audit found the doc-count guard pattern-blind: the README quoted "25 scripts" against 28 shipped and "All 16 SKILL.md files" against 20 skills, and AGENTS.md — the file every non-Claude runtime auto-loads — pinned v1.13.1, eleven releases stale. Every number is now re-derived from the filesystem and the guard grew the exact patterns that escaped it (script counts, SKILL.md-file counts, SocialForge-qualified counts, AGENTS.md currency), each plant-checked against the phrasing it previously missed. 20 skills, 256 tests. Previously — **v1.24.1 (August 16, 2026): richer Agent Plugins listing metadata + the directory submission bundle** (docs/distribution/). And — **v1.24.0: the month-delivery audit — “the tracker says FINAL” is now checked against the disk.** New `scripts/delivery_audit.py` re-derives a month's delivery claims before `/finalize-month` packages anything: every status in the vocabulary, revision history landing on the recorded status, no ghost posts the calendar never knew, **every `force_finalized` post surfaced as a violation** (a bypassed gate is a decision the delivery reader must see, not a flag buried in JSON), every FINAL post's referenced file existing and non-empty (the empty-rectangle lesson), the failure log loadable, and cost totals honest about incompleteness. Exit 1 means the delivery claims something the disk does not support — resolve the finding, never package around it. The verdict lands in `delivery-audit.json` beside the tracker. 20 skills, 253 tests. Previously — **Just shipped — v1.23.0 (August 16, 2026): SocialForge travels in Agent Plugins 1.0.** OpenAI's vendor-neutral plugin standard (announced Aug 6; adopted by ChatGPT, Codex, Cursor, GitHub Copilot, VS Code, Kiro) reads a root `plugin.json` on a closed schema and defines `${PLUGIN_DATA}` as the persistent-data name. Shipped: the root manifest, version-synced and test-guarded, and `${PLUGIN_DATA}` accepted across all 20 scripts that read a data directory — a compliant non-Claude host previously resolved none at all. 20 skills, 243 tests. Previously — **Just shipped — v1.22.0 (August 15, 2026): "nothing fails silently" held where the plugin thought about it, and broke at the seams.** A full-pipeline run with no image or video credentials found all of it. **`render_preview.py` returned `{"status": "success"}` for an image that did not exist** — exit 0, and a real 600×800 PNG that was blank white, because the missing path became a `file://` URI and the browser rendered a broken image as nothing. A reviewer approving that gallery was approving an empty rectangle. It now refuses and writes no file; `--allow-missing-image` gives a copy-layout preview marked `placeholder`, never `success`. **`generate_image.py` exited 0 after every provider failed** — the failure record was perfect and the exit code said pass, so any `&&` chain read total failure as success while `price_book.py` exits 3 in the same situation. Now 0/4/1. **The failure record was never written to disk** — built, returned, printed, gone; it now appends to `shared/failure-log.jsonl`. **The cost report crashed in exactly the case it was for**: summing an unpriced entry raised `TypeError`, and unpriced entries are what a run without credentials produces — now counted, surfaced, and every total labelled a LOWER BOUND, because unpriced is not free. **And the setup skill quoted six prices from memory** against the plugin's own rule; removed and routed to `price_book.py`, with a guard test on any dollar figure. 20 skills, 237 tests. Previously — **Just shipped — v1.21.0 (August 14, 2026): significance markers stay out of captions.** The suite's long-form plugins gained a deterministic AI-tell scan; SocialForge deliberately did not, and now says so in writing. What arrives instead is the rule itself, at the point the caption is written: the copy-adapter never writes a line whose only job is to announce that the next line matters — "here's the thing", "here's the kicker", "that's the part that got me", "let that sink in" — because they read as machine-written to anyone who has scrolled a feed this year, and on a 280-character platform they spend the budget the point needs. Lead with the specific instead ("Approvals went from 14 days to 31" beats "Here's the thing about approval timelines"), and cap stacked soft adverbs at one per caption. **No scanner was added, on purpose:** caption-length copy has no document structure to measure and per-1000-word metrics are noise at 280 characters — a test now pins that reasoning so the absence reads as a decision rather than a gap. 20 skills, 237 tests. Previously — **v1.19.0 (August 13): nothing fails silently anymore.** The provider layer's fallback chains now record every abandoned attempt — who was tried, at which stage it stopped, and what to do about it — instead of collapsing a missing key, a retired model, and a content-policy rejection into one bare failure. Video generation became a real three-rung chain (a Veo failure finally falls back; routing reads stored credentials, not just env vars; a live SDK bug that broke every Veo call was caught by the chain's own attempt records on first execution). An adversarial sweep of the untested surface fixed six defects proven live: the compliance gate failed OPEN on unknown severity words and crashed on one bad regex (now fail-closed with rule_errors), the approval ledger minted ghost posts and accepted `"FINAL "` as a new frozen status (now calendar-validated vocabulary + atomic writes), asset re-indexing minted duplicate ids, a corrupt credentials.json silently destroyed stored keys on the next setup, alias resolution handed retired model ids to SDKs, and the review gallery rendered client-supplied titles unescaped. Plus: `/socialforge:ingest-performance` — platform analytics exports become per-post records with sample floors and margin rules, so `/socialforge:ideate-month` compounds measured wins (and says "no clear wins" about a flat month) instead of remembered ones. 20 skills, 214 tests. Previously — **v1.15.0–v1.18.0 (August 11–12): live pricing + Article 50 + the creator-craft wave.** `price_book.py` (no stored prices, source-URL-required, 24h TTL) + `model_book.py` (capability kinds, live-discovery ladder), C2PA `ai-disclosure` default-on, TikTok/Threads/Bluesky image specs, `/ideate-month`, mechanism-aware CTAs, vendor-neutral research intake + guard, and video scripts rebuilt hook-first with compliance-before-credits. And — **v1.14.2 (July 30): registry re-points + the anonymity guard.** Previously — **v1.14.1 (July 29): the Line-by-Line Audit.** All 134 files — every skill, agent, command, script, reference and doc — read end-to-end by a 5-reader audit fleet and re-verified against July-2026 ground truth. ~180 fixes: retired model ids purged from script defaults and docs (gemini-3-pro-image-preview, gemini-2.5-flash-image), the **model registry finally caught up to July** (Claude 5 + GPT-5.6 families, 51→57 entries, aliases re-pointed), fictional carousel-template names and creative modes corrected repo-wide, preview HTML now escaped, credential files chmod 600, path/storage split-brain resolved to `${CLAUDE_PLUGIN_DATA}`, and the self-containment guard extended across the whole repo. 56 tests passing. [Full changelog →](CHANGELOG.md)
+> 🆕 **Just shipped — v1.25.1 (August 17, 2026): schema-clean hooks manifest.** The `_readme` rationale field in `hooks/hooks.json` failed Cowork's plugin validation ([digital-marketing-pro#9](https://github.com/teachskillofskills-ai/DigitalMarketingPro-techshu/issues/9)); the rationale now lives in `hooks/README.md`, the manifest is exactly `{"hooks": {}}`, and a guard pins it. 20 skills, 260 tests. Previously — **v1.25.0 (August 17, 2026): Grok (xAI Build CLI) becomes the ninth native platform.** A first-class `.grok-plugin/` manifest pair — `plugin.json` with the `"skills"` pointer Grok's loader reads, plus a single-plugin `marketplace.json` — makes `grok plugin install teachskillofskills-ai/SocialForge-techshu` work directly ([Grok Build](https://docs.x.ai/build/features/skills-plugins-marketplaces) also reads the Claude Code manifests for compatibility; the native pair is what an official xAI marketplace listing points at). Both files are version-locked into the release-consistency suite, and Grok joins every platform-name guard. 20 skills, 258 tests. Previously — **v1.24.2 (August 16, 2026): the documentation truth pass.** A from-zero audit found the doc-count guard pattern-blind: the README quoted "25 scripts" against 28 shipped and "All 16 SKILL.md files" against 20 skills, and AGENTS.md — the file every non-Claude runtime auto-loads — pinned v1.13.1, eleven releases stale. Every number is now re-derived from the filesystem and the guard grew the exact patterns that escaped it (script counts, SKILL.md-file counts, SocialForge-qualified counts, AGENTS.md currency), each plant-checked against the phrasing it previously missed. 20 skills, 256 tests. Previously — **v1.24.1 (August 16, 2026): richer Agent Plugins listing metadata + the directory submission bundle** (docs/distribution/). And — **v1.24.0: the month-delivery audit — “the tracker says FINAL” is now checked against the disk.** New `scripts/delivery_audit.py` re-derives a month's delivery claims before `/finalize-month` packages anything: every status in the vocabulary, revision history landing on the recorded status, no ghost posts the calendar never knew, **every `force_finalized` post surfaced as a violation** (a bypassed gate is a decision the delivery reader must see, not a flag buried in JSON), every FINAL post's referenced file existing and non-empty (the empty-rectangle lesson), the failure log loadable, and cost totals honest about incompleteness. Exit 1 means the delivery claims something the disk does not support — resolve the finding, never package around it. The verdict lands in `delivery-audit.json` beside the tracker. 20 skills, 253 tests. Previously — **Just shipped — v1.23.0 (August 16, 2026): SocialForge travels in Agent Plugins 1.0.** OpenAI's vendor-neutral plugin standard (announced Aug 6; adopted by ChatGPT, Codex, Cursor, GitHub Copilot, VS Code, Kiro) reads a root `plugin.json` on a closed schema and defines `${PLUGIN_DATA}` as the persistent-data name. Shipped: the root manifest, version-synced and test-guarded, and `${PLUGIN_DATA}` accepted across all 20 scripts that read a data directory — a compliant non-Claude host previously resolved none at all. 20 skills, 243 tests. Previously — **Just shipped — v1.22.0 (August 15, 2026): "nothing fails silently" held where the plugin thought about it, and broke at the seams.** A full-pipeline run with no image or video credentials found all of it. **`render_preview.py` returned `{"status": "success"}` for an image that did not exist** — exit 0, and a real 600×800 PNG that was blank white, because the missing path became a `file://` URI and the browser rendered a broken image as nothing. A reviewer approving that gallery was approving an empty rectangle. It now refuses and writes no file; `--allow-missing-image` gives a copy-layout preview marked `placeholder`, never `success`. **`generate_image.py` exited 0 after every provider failed** — the failure record was perfect and the exit code said pass, so any `&&` chain read total failure as success while `price_book.py` exits 3 in the same situation. Now 0/4/1. **The failure record was never written to disk** — built, returned, printed, gone; it now appends to `shared/failure-log.jsonl`. **The cost report crashed in exactly the case it was for**: summing an unpriced entry raised `TypeError`, and unpriced entries are what a run without credentials produces — now counted, surfaced, and every total labelled a LOWER BOUND, because unpriced is not free. **And the setup skill quoted six prices from memory** against the plugin's own rule; removed and routed to `price_book.py`, with a guard test on any dollar figure. 20 skills, 237 tests. Previously — **Just shipped — v1.21.0 (August 14, 2026): significance markers stay out of captions.** The suite's long-form plugins gained a deterministic AI-tell scan; SocialForge deliberately did not, and now says so in writing. What arrives instead is the rule itself, at the point the caption is written: the copy-adapter never writes a line whose only job is to announce that the next line matters — "here's the thing", "here's the kicker", "that's the part that got me", "let that sink in" — because they read as machine-written to anyone who has scrolled a feed this year, and on a 280-character platform they spend the budget the point needs. Lead with the specific instead ("Approvals went from 14 days to 31" beats "Here's the thing about approval timelines"), and cap stacked soft adverbs at one per caption. **No scanner was added, on purpose:** caption-length copy has no document structure to measure and per-1000-word metrics are noise at 280 characters — a test now pins that reasoning so the absence reads as a decision rather than a gap. 20 skills, 237 tests. Previously — **v1.19.0 (August 13): nothing fails silently anymore.** The provider layer's fallback chains now record every abandoned attempt — who was tried, at which stage it stopped, and what to do about it — instead of collapsing a missing key, a retired model, and a content-policy rejection into one bare failure. Video generation became a real three-rung chain (a Veo failure finally falls back; routing reads stored credentials, not just env vars; a live SDK bug that broke every Veo call was caught by the chain's own attempt records on first execution). An adversarial sweep of the untested surface fixed six defects proven live: the compliance gate failed OPEN on unknown severity words and crashed on one bad regex (now fail-closed with rule_errors), the approval ledger minted ghost posts and accepted `"FINAL "` as a new frozen status (now calendar-validated vocabulary + atomic writes), asset re-indexing minted duplicate ids, a corrupt credentials.json silently destroyed stored keys on the next setup, alias resolution handed retired model ids to SDKs, and the review gallery rendered client-supplied titles unescaped. Plus: `/socialforge:ingest-performance` — platform analytics exports become per-post records with sample floors and margin rules, so `/socialforge:ideate-month` compounds measured wins (and says "no clear wins" about a flat month) instead of remembered ones. 20 skills, 214 tests. Previously — **v1.15.0–v1.18.0 (August 11–12): live pricing + Article 50 + the creator-craft wave.** `price_book.py` (no stored prices, source-URL-required, 24h TTL) + `model_book.py` (capability kinds, live-discovery ladder), C2PA `ai-disclosure` default-on, TikTok/Threads/Bluesky image specs, `/ideate-month`, mechanism-aware CTAs, vendor-neutral research intake + guard, and video scripts rebuilt hook-first with compliance-before-credits. And — **v1.14.2 (July 30): registry re-points + the anonymity guard.** Previously — **v1.14.1 (July 29): the Line-by-Line Audit.** All 134 files — every skill, agent, command, script, reference and doc — read end-to-end by a 5-reader audit fleet and re-verified against July-2026 ground truth. ~180 fixes: retired model ids purged from script defaults and docs (gemini-3-pro-image-preview, gemini-2.5-flash-image), the **model registry finally caught up to July** (Claude 5 + GPT-5.6 families, 51→57 entries, aliases re-pointed), fictional carousel-template names and creative modes corrected repo-wide, preview HTML now escaped, credential files chmod 600, path/storage split-brain resolved to `${CLAUDE_PLUGIN_DATA}`, and the self-containment guard extended across the whole repo. 56 tests passing. [Full changelog →](CHANGELOG.md)
 
 ```bash
 # Install in Claude Code:
-/plugin marketplace add indranilbanerjee/neels-plugins
-/plugin install socialforge@neels-plugins
+/plugin marketplace add teachskillofskills-ai/techshu-marketplace
+/plugin install socialforge@techshu
 
 # Install on Hermes Agent (Nous Research):
-hermes plugins install indranilbanerjee/socialforge
+hermes plugins install teachskillofskills-ai/SocialForge-techshu
 
 # Install on OpenClaw:
-openclaw plugins install git:github.com/indranilbanerjee/socialforge
+openclaw plugins install git:github.com/teachskillofskills-ai/SocialForge-techshu
 
 # Install on Grok (xAI Build CLI):
-grok plugin install indranilbanerjee/socialforge
+grok plugin install teachskillofskills-ai/SocialForge-techshu
 ```
-
-> If SocialForge saves your team time, [give it a star ⭐](https://github.com/indranilbanerjee/socialforge/stargazers) — it's the single thing that helps other agencies find it.
 
 **Status:** Production Ready · 20 skills · 25 commands · 5 agents · 28 scripts · an opt-in catalog of 10 HTTP connectors (zero auto-connected) · 0 global hooks
 
@@ -71,19 +64,19 @@ Product photos, headshots, screenshots — these are the brand’s real visual i
 
 | Platform | Install command | Manifest path | Status |
 |---|---|---|---|
-| **Claude Code** CLI + IDE extensions | `/plugin install socialforge@neels-plugins` | `.claude-plugin/plugin.json` | Full support (canonical) |
-| **Anthropic Cowork** | Plugins UI → Add marketplace → `indranilbanerjee/neels-plugins` → Install SocialForge | same `.claude-plugin/` files | Full support — no `/plugin` slash commands in Cowork (UI-only) |
-| **OpenAI Codex** CLI + IDE + App | `codex plugin marketplace add indranilbanerjee/neels-plugins` then `codex plugin install socialforge@neels-plugins` | `.codex-plugin/plugin.json` (published OpenAI schema) | Full skills + MCP support |
-| **Cursor 2.5+** | In any Cursor Agent chat: `/add-plugin socialforge@https://github.com/indranilbanerjee/socialforge` | `.cursor-plugin/plugin.json` (verified Cursor 2.5+ JSON Schema) | Full skills + agents + commands support |
-| **GitHub Copilot CLI** | `copilot plugin marketplace add indranilbanerjee/neels-plugins` then `copilot plugin install socialforge@neels-plugins` | `.github/plugin/plugin.json` (Copilot also recognizes `.claude-plugin/plugin.json` as fallback) | Full skills + MCP support |
-| **Google Antigravity 2.0** CLI + IDE | `agy plugin install https://github.com/indranilbanerjee/socialforge` | `gemini-extension.json` (at repo root, per Google's reference pattern) | Full skills + hooks support |
-| **Hermes Agent** (Nous Research) — Desktop + CLI on macOS / Windows / Linux | `hermes plugins install indranilbanerjee/socialforge` | `plugin.yaml` + `__init__.py` at repo root (Hermes native spec) | Native plugin — adapter walks `skills/` at register time and exposes all 20 skills via `ctx.register_skill()`. Targets Hermes Desktop v0.15.2+ (public preview June 2 2026). |
-| **OpenClaw** (formerly Clawdbot / Moltbot) | `openclaw plugins install git:github.com/indranilbanerjee/socialforge` | `openclaw.plugin.json` at repo root (also auto-detects `.claude-plugin/plugin.json` as Claude-compatible bundle) | Native plugin via `openclaw.plugin.json`; `skills` field points at `./skills`. |
-| **Grok** (xAI Build CLI) | `grok plugin install indranilbanerjee/socialforge` — or `grok plugin marketplace add indranilbanerjee/neels-plugins` then `grok plugin install socialforge` (append `--trust` to skip the install confirmation) | `.grok-plugin/plugin.json` + `.grok-plugin/marketplace.json` ([Grok Build](https://docs.x.ai/build/features/skills-plugins-marketplaces) also reads the Claude Code manifests for compatibility; the native pair is the first-class lane) | Full skills support |
+| **Claude Code** CLI + IDE extensions | `/plugin install socialforge@techshu` | `.claude-plugin/plugin.json` | Full support (canonical) |
+| **Anthropic Cowork** | Plugins UI → Add marketplace → `teachskillofskills-ai/techshu-marketplace` → Install SocialForge | same `.claude-plugin/` files | Full support — no `/plugin` slash commands in Cowork (UI-only) |
+| **OpenAI Codex** CLI + IDE + App | `codex plugin marketplace add teachskillofskills-ai/techshu-marketplace` then `codex plugin install socialforge@techshu` | `.codex-plugin/plugin.json` (published OpenAI schema) | Full skills + MCP support |
+| **Cursor 2.5+** | In any Cursor Agent chat: `/add-plugin socialforge@https://github.com/teachskillofskills-ai/SocialForge-techshu` | `.cursor-plugin/plugin.json` (verified Cursor 2.5+ JSON Schema) | Full skills + agents + commands support |
+| **GitHub Copilot CLI** | `copilot plugin marketplace add teachskillofskills-ai/techshu-marketplace` then `copilot plugin install socialforge@techshu` | `.github/plugin/plugin.json` (Copilot also recognizes `.claude-plugin/plugin.json` as fallback) | Full skills + MCP support |
+| **Google Antigravity 2.0** CLI + IDE | `agy plugin install https://github.com/teachskillofskills-ai/SocialForge-techshu` | `gemini-extension.json` (at repo root, per Google's reference pattern) | Full skills + hooks support |
+| **Hermes Agent** (Nous Research) — Desktop + CLI on macOS / Windows / Linux | `hermes plugins install teachskillofskills-ai/SocialForge-techshu` | `plugin.yaml` + `__init__.py` at repo root (Hermes native spec) | Native plugin — adapter walks `skills/` at register time and exposes all 20 skills via `ctx.register_skill()`. Targets Hermes Desktop v0.15.2+ (public preview June 2 2026). |
+| **OpenClaw** (formerly Clawdbot / Moltbot) | `openclaw plugins install git:github.com/teachskillofskills-ai/SocialForge-techshu` | `openclaw.plugin.json` at repo root (also auto-detects `.claude-plugin/plugin.json` as Claude-compatible bundle) | Native plugin via `openclaw.plugin.json`; `skills` field points at `./skills`. |
+| **Grok** (xAI Build CLI) | `grok plugin install teachskillofskills-ai/SocialForge-techshu` — or `grok plugin marketplace add teachskillofskills-ai/techshu-marketplace` then `grok plugin install socialforge` (append `--trust` to skip the install confirmation) | `.grok-plugin/plugin.json` + `.grok-plugin/marketplace.json` ([Grok Build](https://docs.x.ai/build/features/skills-plugins-marketplaces) also reads the Claude Code manifests for compatibility; the native pair is the first-class lane) | Full skills support |
 
 **Why this works:** Agent Skills became an open standard in December 2025 (41+ agent products by June 2026). All 20 SKILL.md files in SocialForge are platform-portable as written.
 
-**Works on 35+ additional Agent Skills platforms** without per-platform manifests — Goose (Block), OpenHands, OpenCode (sst), Junie (JetBrains), Gemini CLI, Roo Code, Cline/Windsurf, Kiro, Amp, Letta, Mux, Factory, Workshop, Tabnine, Mistral Vibe, and more. Point any Agent-Skills-compatible client at `https://github.com/indranilbanerjee/socialforge/tree/main/skills` and all 20 SocialForge skills are immediately discoverable.
+**Works on 35+ additional Agent Skills platforms** without per-platform manifests — Goose (Block), OpenHands, OpenCode (sst), Junie (JetBrains), Gemini CLI, Roo Code, Cline/Windsurf, Kiro, Amp, Letta, Mux, Factory, Workshop, Tabnine, Mistral Vibe, and more. Point any Agent-Skills-compatible client at `https://github.com/teachskillofskills-ai/SocialForge-techshu/tree/main/skills` and all 20 SocialForge skills are immediately discoverable.
 
 ## Architecture
 
@@ -99,13 +92,13 @@ Product photos, headshots, screenshots — these are the brand’s real visual i
 
 ### Option A: From Marketplace (recommended)
 ```
-/plugin marketplace add indranilbanerjee/neels-plugins
-/plugin install socialforge@neels-plugins
+/plugin marketplace add teachskillofskills-ai/techshu-marketplace
+/plugin install socialforge@techshu
 ```
 
 ### Option B: Direct from GitHub
 ```
-claude plugins add github:indranilbanerjee/socialforge
+claude plugins add github:teachskillofskills-ai/SocialForge-techshu
 ```
 
 ### Option C: From Local Directory
@@ -140,7 +133,7 @@ Your admin provides you with:
 >
 > The plugin IS installed (your SocialForge skills work); only the management command is unavailable. Fix:
 >
-> 1. **In the chat UI** — click the **Plugins** button at the bottom of the chat → **Manage plugins** → find SocialForge → look for Update / Refresh / Remove. If no Update button, **Remove** then **Add plugin** → re-install from `indranilbanerjee/neels-plugins`. The re-pull fetches the latest version.
+> 1. **In the chat UI** — click the **Plugins** button at the bottom of the chat → **Manage plugins** → find SocialForge → look for Update / Refresh / Remove. If no Update button, **Remove** then **Add plugin** → re-install from `teachskillofskills-ai/techshu-marketplace`. The re-pull fetches the latest version.
 > 2. **For slash-command management** — switch to Claude Code (CLI or IDE) or Cowork. The plugin runs identically across every Anthropic surface; you're choosing where to type management commands.
 >
 > Once you're in Claude Code or Cowork, the rest of this section applies.
@@ -149,14 +142,14 @@ Your admin provides you with:
 
 **Option 1 (recommended) — turn auto-update on, once:**
 
-Open `/plugin`, go to the **Marketplaces** tab, find `neels-plugins`, and toggle **Enable auto-update**. From then on, Claude Code refreshes the catalog at startup and pulls new SocialForge releases automatically. After an auto-update fires, run `/reload-plugins` when prompted to apply changes mid-session — no full restart, conversation context preserved.
+Open `/plugin`, go to the **Marketplaces** tab, find `techshu`, and toggle **Enable auto-update**. From then on, Claude Code refreshes the catalog at startup and pulls new SocialForge releases automatically. After an auto-update fires, run `/reload-plugins` when prompted to apply changes mid-session — no full restart, conversation context preserved.
 
 **Option 2 — manual update each time:**
 
 ```
-/plugin marketplace update neels-plugins
-/plugin uninstall socialforge@neels-plugins
-/plugin install socialforge@neels-plugins
+/plugin marketplace update techshu
+/plugin uninstall socialforge@techshu
+/plugin install socialforge@techshu
 /reload-plugins
 ```
 
@@ -165,14 +158,14 @@ Open `/plugin`, go to the **Marketplaces** tab, find `neels-plugins`, and toggle
 **Force-reinstall (version unchanged but content changed):**
 
 ```
-rm -rf ~/.claude/plugins/cache/neels-plugins
-/plugin install socialforge@neels-plugins
+rm -rf ~/.claude/plugins/cache/techshu
+/plugin install socialforge@techshu
 /reload-plugins
 ```
 
 ### Installs in Cowork
 
-Cowork is the Anthropic Desktop computer-use product (macOS/Windows). It supports third-party plugins from custom marketplaces — same `/plugin marketplace add indranilbanerjee/neels-plugins` install pattern. Cowork has local filesystem access, so the full SocialForge pipeline including all 28 Python scripts (image generation, video generation, ffmpeg postprocessing, C2PA signing) runs natively. The only Cowork-specific limitation is **HTTP MCPs only** (no stdio/npx) — SocialForge's 10 connectors are all HTTP and fully Cowork-compatible.
+Cowork is the Anthropic Desktop computer-use product (macOS/Windows). It supports third-party plugins from custom marketplaces — same `/plugin marketplace add teachskillofskills-ai/techshu-marketplace` install pattern. Cowork has local filesystem access, so the full SocialForge pipeline including all 28 Python scripts (image generation, video generation, ffmpeg postprocessing, C2PA signing) runs natively. The only Cowork-specific limitation is **HTTP MCPs only** (no stdio/npx) — SocialForge's 10 connectors are all HTTP and fully Cowork-compatible.
 
 ### Pre-Requisites for Image Generation
 
@@ -315,9 +308,9 @@ The setup wizard asks for:
 Credentials are stored in the plugin’s persistent data directory. They survive across sessions, restarts, and plugin updates.
 
 **Where credentials are stored per platform:**
-- Windows: `%APPDATA%\Claude\plugins\data\socialforge-neels-plugins\socialforge\`
-- macOS: `~/Library/Application Support/Claude/plugins/data/socialforge-neels-plugins/socialforge/`
-- Linux: `~/.config/Claude/plugins/data/socialforge-neels-plugins/socialforge/`
+- Windows: `%APPDATA%\Claude\plugins\data\socialforge-techshu\socialforge\`
+- macOS: `~/Library/Application Support/Claude/plugins/data/socialforge-techshu/socialforge/`
+- Linux: `~/.config/Claude/plugins/data/socialforge-techshu/socialforge/`
 
 Or if using the fallback workspace: `~/socialforge-workspace/`
 
@@ -375,11 +368,11 @@ Brand configs and asset indexes persist across sessions via `${CLAUDE_PLUGIN_DAT
 
 ## Current Release (v1.25.1)
 
-**Schema-clean hooks manifest.** `hooks/hooks.json` carried a `_readme` rationale field that Cowork's plugin validation rejects as an unknown top-level key ([digital-marketing-pro#9](https://github.com/indranilbanerjee/digital-marketing-pro/issues/9) — all three suite plugins shipped the same defect). The rationale moved to `hooks/README.md`, the manifest is now exactly `{"hooks": {}}`, and `TestHooksManifestSchemaClean` keeps it that way. Tests 258 → 260.
+**Schema-clean hooks manifest.** `hooks/hooks.json` carried a `_readme` rationale field that Cowork's plugin validation rejects as an unknown top-level key ([digital-marketing-pro#9](https://github.com/teachskillofskills-ai/DigitalMarketingPro-techshu/issues/9) — all three suite plugins shipped the same defect). The rationale moved to `hooks/README.md`, the manifest is now exactly `{"hooks": {}}`, and `TestHooksManifestSchemaClean` keeps it that way. Tests 258 → 260.
 
 ### Release v1.25.0
 
-**Grok (xAI Build CLI) native support.** A first-class `.grok-plugin/` manifest pair (`plugin.json` + single-plugin `marketplace.json`) makes `grok plugin install indranilbanerjee/socialforge` work directly; Grok also reads the Claude Code manifests for compatibility, but the native pair is what an official xAI marketplace listing points at. Both files version-locked in `tests/test_release_consistency.py`; Grok added to the install-command and platform-name guards. Tests 256 → 258.
+**Grok (xAI Build CLI) native support.** A first-class `.grok-plugin/` manifest pair (`plugin.json` + single-plugin `marketplace.json`) makes `grok plugin install teachskillofskills-ai/SocialForge-techshu` work directly; Grok also reads the Claude Code manifests for compatibility, but the native pair is what an official xAI marketplace listing points at. Both files version-locked in `tests/test_release_consistency.py`; Grok added to the install-command and platform-name guards. Tests 256 → 258.
 
 ### Release v1.24.2
 
@@ -425,7 +418,7 @@ Adds a release-consistency test layer to SF. New `tests/test_release_consistency
 
 ### Earlier (v1.12.0 — Multi-harness expansion: native Hermes Agent + native OpenClaw + 23-test stdlib suite, 2026-06-09)
 
-Brings SocialForge to full 8-platform native support. New `plugin.yaml` + `__init__.py` at repo root for Hermes (walks `skills/` at register time, exposes all 16 SF skills via `ctx.register_skill()` — stdlib only, defensive coding, never raises). New `openclaw.plugin.json` at repo root for OpenClaw native install (id + configSchema + skills: `["./skills"]`). New `tests/` directory with 23 stdlib-unittest tests covering plugin.yaml schema, adapter import + register, mock ctx integration, graceful degradation on bad ctx/None, cross-manifest version consistency. Install: `hermes plugins install indranilbanerjee/socialforge` or `openclaw plugins install git:github.com/indranilbanerjee/socialforge`. Zero impact on existing platforms — each reads only its own manifest path.
+Brings SocialForge to full 8-platform native support. New `plugin.yaml` + `__init__.py` at repo root for Hermes (walks `skills/` at register time, exposes all 16 SF skills via `ctx.register_skill()` — stdlib only, defensive coding, never raises). New `openclaw.plugin.json` at repo root for OpenClaw native install (id + configSchema + skills: `["./skills"]`). New `tests/` directory with 23 stdlib-unittest tests covering plugin.yaml schema, adapter import + register, mock ctx integration, graceful degradation on bad ctx/None, cross-manifest version consistency. Install: `hermes plugins install teachskillofskills-ai/SocialForge-techshu` or `openclaw plugins install git:github.com/teachskillofskills-ai/SocialForge-techshu`. Zero impact on existing platforms — each reads only its own manifest path.
 
 ### Earlier (v1.11.0 — C2PA 2.3 / 2.4 spec refresh, 2026-06-04)
 
@@ -441,7 +434,7 @@ Trimmed install-UI descriptions to ~150 chars across all 5 platform manifests. R
 
 ### Earlier (v1.8.1)
 
-**Polish + discoverability + community-standards pass.** Adds Star History, community-standards files (`CODE_OF_CONDUCT.md`, `SECURITY.md`, PR + Issue templates), rewrites the README hero with social-proof badges + maintainer block ([indranil.in](https://indranil.in) + [linkedin.com/in/askneelnow](https://www.linkedin.com/in/askneelnow) + [@askneelnow](https://x.com/askneelnow)), fixes stale asset counts (15→20 skills, 19→22 scripts) across README, and expands `plugin.json` keywords from 17 → 47 for marketplace search.
+**Polish + discoverability + community-standards pass.** Adds Star History, community-standards files (`CODE_OF_CONDUCT.md`, `SECURITY.md`, PR + Issue templates), rewrites the README hero with social-proof badges + maintainer block (the author website, LinkedIn and X links), fixes stale asset counts (15→20 skills, 19→22 scripts) across README, and expands `plugin.json` keywords from 17 → 47 for marketplace search.
 
 ### Earlier (v1.9.0 — real native manifests for 5 surfaces, 2026-05-27)
 
@@ -480,65 +473,46 @@ v1.5.0 removed all 4 global hooks (SessionStart credential banner, PreToolUse Wr
 - **[Troubleshooting](references/troubleshooting.md)** — Common issues and fixes
 - **[Changelog](CHANGELOG.md)** — Release history
 
-## Star history
+## About this plugin
 
-[![Star History Chart](https://api.star-history.com/svg?repos=indranilbanerjee/socialforge&type=Date)](https://star-history.com/#indranilbanerjee/socialforge&Date)
+SocialForge is built and maintained by the **TechShu AI team** at Indus Net TechShu Digital
+Pvt. Ltd. It is the social production engine our delivery teams run client calendars on, kept
+current against platform and regulatory change as part of that delivery.
 
----
+- 🌐 **Website:** [techshu.ai](https://techshu.ai)
+- 📦 **Companion plugins:** [Digital Marketing Pro](https://github.com/teachskillofskills-ai/DigitalMarketingPro-techshu) · [ContentForge](https://github.com/teachskillofskills-ai/ContentForge-techshu)
+- 💬 **Discussions:** [GitHub Discussions](https://github.com/teachskillofskills-ai/SocialForge-techshu/discussions)
+- 🐛 **Bug reports:** [GitHub Issues](https://github.com/teachskillofskills-ai/SocialForge-techshu/issues)
+- 🔒 **Security:** [Private Security Advisory](https://github.com/teachskillofskills-ai/SocialForge-techshu/security/advisories/new) (see [SECURITY.md](SECURITY.md))
 
-## About the maintainer
-
-SocialForge is built and maintained by **[Indranil “Neel” Banerjee](https://indranil.in)** — a builder and systems thinker with roots in information security and a second act across growth marketing, enterprise digital operations, and AI transformation. This repository is one public implementation of a broader focus on trustworthy AI execution: preserve context, make evidence inspectable, and keep people at consequential decision points.
-
-- 🌐 **Website:** [indranil.in](https://indranil.in)
-- 💼 **LinkedIn:** [linkedin.com/in/askneelnow](https://www.linkedin.com/in/askneelnow)
-- 🐦 **X / Twitter:** [@askneelnow](https://x.com/askneelnow)
-- 💻 **GitHub:** [@indranilbanerjee](https://github.com/indranilbanerjee)
-- 📦 **Other plugins:** [Digital Marketing Pro](https://github.com/indranilbanerjee/digital-marketing-pro) · [ContentForge](https://github.com/indranilbanerjee/contentforge)
-- 💬 **Discussions:** [GitHub Discussions](https://github.com/indranilbanerjee/socialforge/discussions)
-- 🐛 **Bug reports:** [GitHub Issues](https://github.com/indranilbanerjee/socialforge/issues)
-- 🔒 **Security:** [Private Security Advisory](https://github.com/indranilbanerjee/socialforge/security/advisories/new) (see [SECURITY.md](SECURITY.md))
-
-If SocialForge saves your team time, [⭐ star the repo](https://github.com/indranilbanerjee/socialforge/stargazers). Sharing it on **LinkedIn** or **X** helps people discover the work too.
+Originally created by Indranil Banerjee, MIT licensed; TechShu's version is maintained separately.
 
 ---
 
 ## Contributing
 
-PRs welcome — especially on the four creative modes, platform-specific copy adaptation rules, and AI image/video model integrations. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow, [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) for the PR checklist, and [TESTING-GUIDE.md](TESTING-GUIDE.md) for the test plan. All contributors are expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md). Security issues: use [Private Security Advisories](https://github.com/indranilbanerjee/socialforge/security/advisories/new) per [SECURITY.md](SECURITY.md) — do not file public issues for vulnerabilities.
+PRs welcome — especially on the four creative modes, platform-specific copy adaptation rules, and AI image/video model integrations. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow, [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) for the PR checklist, and [TESTING-GUIDE.md](TESTING-GUIDE.md) for the test plan. All contributors are expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md). Security issues: use [Private Security Advisories](https://github.com/teachskillofskills-ai/SocialForge-techshu/security/advisories/new) per [SECURITY.md](SECURITY.md) — do not file public issues for vulnerabilities.
 
 ---
 
-## Neelverse Marketing Suite
+## TechShu Marketing Suite
 
-SocialForge is part of the **Neelverse Marketing Suite** by [Indranil Banerjee](https://indranil.in) — three plugins that work together for end-to-end marketing:
+SocialForge is part of the **TechShu Marketing Suite** — three plugins that work together for end-to-end marketing:
 
 | Plugin | What It Does | Install |
 |--------|-------------|---------|
-| **[Digital Marketing Pro](https://github.com/indranilbanerjee/digital-marketing-pro)** | End-to-end engagement methodology — 12-Part Strategy Flow, Four Core Documents, Two-Views Model | `/plugin install digital-marketing-pro@neels-plugins` |
-| **[ContentForge](https://github.com/indranilbanerjee/contentforge)** | Publication-ready content via 10-phase pipeline — research, fact-check, draft, SEO, humanize, `.docx` export with C2PA signing | `/plugin install contentforge@neels-plugins` |
-| **SocialForge** (this plugin) | Social media calendar automation with AI image + video generation (Vertex AI Nano Banana Pro + WaveSpeed Kling v3.0 Pro), C2PA signing | `/plugin install socialforge@neels-plugins` |
+| **[Digital Marketing Pro](https://github.com/teachskillofskills-ai/DigitalMarketingPro-techshu)** | End-to-end engagement methodology — 12-Part Strategy Flow, Four Core Documents, Two-Views Model | `/plugin install digital-marketing-pro@techshu` |
+| **[ContentForge](https://github.com/teachskillofskills-ai/ContentForge-techshu)** | Publication-ready content via 10-phase pipeline — research, fact-check, draft, SEO, humanize, `.docx` export with C2PA signing | `/plugin install contentforge@techshu` |
+| **SocialForge** (this plugin) | Social media calendar automation with AI image + video generation (Vertex AI Nano Banana Pro + WaveSpeed Kling v3.0 Pro), C2PA signing | `/plugin install socialforge@techshu` |
 
 **Use together:** Plan campaigns in DM Pro, produce articles with ContentForge, create social visuals and videos with SocialForge. All share the same brand profiles and marketplace.
 
 ```
-claude plugin marketplace add indranilbanerjee/neels-plugins
-claude plugin install digital-marketing-pro@neels-plugins
-claude plugin install contentforge@neels-plugins
-claude plugin install socialforge@neels-plugins
+claude plugin marketplace add teachskillofskills-ai/techshu-marketplace
+claude plugin install digital-marketing-pro@techshu
+claude plugin install contentforge@techshu
+claude plugin install socialforge@techshu
 ```
-
-## Sponsor this project
-
-This plugin is MIT-licensed, free to use commercially, and collects no telemetry. What
-sponsorship pays for is the unglamorous half of keeping it accurate: platform-API updates
-when a vendor ships a breaking version, model-registry refreshes when a model is retired,
-compliance passes when regulatory guidance moves, and issue triage.
-
-If it saves your team time, you can [sponsor the work](https://github.com/sponsors/indranilbanerjee).
-Sponsors from $25/mo are listed in [SPONSORS.md](SPONSORS.md).
-
-[![Sponsor](https://img.shields.io/badge/sponsor%20on%20GitHub-%E2%9D%A4-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/indranilbanerjee)
 
 ---
 
@@ -548,4 +522,4 @@ MIT — see [LICENSE](LICENSE). Free to use commercially.
 
 ---
 
-<sub>Made with care by [Indranil Banerjee](https://indranil.in) · MIT-licensed · [⭐ Star the repo](https://github.com/indranilbanerjee/socialforge) if it helps you</sub>
+<sub>Maintained by Indus Net TechShu Digital Pvt. Ltd. · MIT-licensed</sub>

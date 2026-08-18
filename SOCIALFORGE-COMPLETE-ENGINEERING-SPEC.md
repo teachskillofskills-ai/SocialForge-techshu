@@ -15,7 +15,7 @@
 
 **Spec Version:** 1.0.0 (historical — shipped release is 1.13.1)
 **Target Runtime:** Claude Code (CLI + IDE extensions), Anthropic Cowork
-**Author:** Neel (Indranil Banerjee)
+**Author:** Indranil Banerjee (original engineering spec)
 **Date:** March 2026
 
 ---
@@ -152,8 +152,8 @@ This single capability transforms the plugin from "AI generates random images wi
   "description": "Agency-grade social media calendar automation with asset-first compositing. Takes monthly content calendars, matches brand assets, generates AI-composed creative, renders carousels, adapts copy per platform, produces review galleries and delivery documents. Supports multiple brands, async approval workflows, and scheduled automation. Use this plugin for any social media content production, calendar automation, brand asset management, post generation, carousel creation, or social media workflow task.",
   "version": "1.0.0",
   "author": {
-    "name": "Indranil Banerjee",
-    "url": "https://github.com/indranilbanerjee"
+    "name": "Indus Net TechShu Digital Pvt. Ltd.",
+    "url": "https://github.com/teachskillofskills-ai"
   },
   "keywords": [
     "social-media", "content-calendar", "image-generation", "compositing",
@@ -3194,12 +3194,12 @@ The primary development and execution environment.
 # Clone or install the plugin
 claude plugin install --local ./socialforge
 # Or from marketplace
-claude plugin marketplace add indranilbanerjee/neels-plugins
-claude plugin install socialforge@neels-plugins
+claude plugin marketplace add teachskillofskills-ai/techshu-marketplace
+claude plugin install socialforge@techshu
 ```
 
 **In Anthropic Cowork:**
-Open Plugins panel → Add marketplace → paste `indranilbanerjee/neels-plugins`
+Open Plugins panel → Add marketplace → paste `teachskillofskills-ai/techshu-marketplace`
 → Install SocialForge from the listed plugins. (No `/plugin` slash commands
 in Cowork — UI-only.) Add to the project's CLAUDE.md / AGENTS.md:
 ```markdown

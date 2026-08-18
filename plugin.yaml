@@ -9,7 +9,7 @@
 # Tested against: Hermes Desktop v0.15.2 (June 2026 public preview)
 #
 # Install for Hermes users:
-#   hermes plugins install indranilbanerjee/socialforge
+#   hermes plugins install teachskillofskills-ai/SocialForge-techshu
 
 name: socialforge
 version: 1.25.1
@@ -18,9 +18,9 @@ description: >-
   commands, asset-first compositing + AI image (Vertex AI Nano Banana Pro) +
   AI video (Kling v3.0 Pro) + C2PA signing (EU AI Act Article 50 ready).
   Now native on Hermes.
-author: Indranil Banerjee
+author: Indus Net TechShu Digital Pvt. Ltd.
 license: MIT
-homepage: https://github.com/indranilbanerjee/socialforge
+homepage: https://github.com/teachskillofskills-ai/SocialForge-techshu
 
 provides_tools: []
 provides_hooks: []

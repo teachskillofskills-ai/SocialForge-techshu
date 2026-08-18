@@ -25,7 +25,7 @@ Prepared 2026-08-16. Items marked **[owner action]** need the account holder.
   strict status vocabulary, per-call cost tracking with live price lookups (no
   stored prices, ever), C2PA-aligned AI disclosure, and a delivery audit that
   re-checks every claim against the disk before the month ships.
-- **Homepage / repo:** https://github.com/indranilbanerjee/socialforge
+- **Homepage / repo:** https://github.com/teachskillofskills-ai/SocialForge-techshu
 - **License:** MIT
 - **Policy note for reviewers:** nothing fails silently (structured failure
   records, exit codes proven by tests); no stored prices or hardcoded model ids

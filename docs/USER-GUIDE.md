@@ -99,14 +99,14 @@ Check status anytime: `/socialforge:setup --status`
 ### Recommended: From Marketplace
 
 ```
-/plugin marketplace add github:indranilbanerjee/neels-plugins
-/plugin install socialforge@neels-plugins
+/plugin marketplace add github:teachskillofskills-ai/techshu-marketplace
+/plugin install socialforge@techshu
 ```
 
 ### Alternative: Direct from GitHub
 
 ```
-/plugin install github:indranilbanerjee/socialforge
+/plugin install github:teachskillofskills-ai/SocialForge-techshu
 ```
 
 ### Verify Installation

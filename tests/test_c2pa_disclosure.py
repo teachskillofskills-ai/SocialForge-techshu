@@ -76,27 +76,27 @@ class TestHumanOversight(unittest.TestCase):
         self.assertNotIn("reviewed_by", data)
 
     def test_reviewer_is_carried_into_the_disclosure(self):
-        data = assertion(build(reviewed_by="Neel Banerjee"), "c2pa.ai-disclosure")
+        data = assertion(build(reviewed_by="TechShu Reviewer"), "c2pa.ai-disclosure")
         self.assertEqual(data["human_oversight"], "reviewed-before-publication")
-        self.assertEqual(data["reviewed_by"], "Neel Banerjee")
+        self.assertEqual(data["reviewed_by"], "TechShu Reviewer")
 
     def test_review_is_also_a_c2pa_action_not_just_metadata(self):
-        actions = assertion(build(reviewed_by="Neel Banerjee"), "c2pa.actions.v2")["actions"]
+        actions = assertion(build(reviewed_by="TechShu Reviewer"), "c2pa.actions.v2")["actions"]
         edited = [a for a in actions if a["action"] == "c2pa.edited"]
         self.assertEqual(len(edited), 1, "human approval did not appear in the action chain")
-        self.assertIn("Neel Banerjee", edited[0]["parameters"]["description"])
+        self.assertIn("TechShu Reviewer", edited[0]["parameters"]["description"])
 
     def test_reviewer_appears_as_editor_in_schema_org(self):
-        cw = assertion(build(reviewed_by="Neel Banerjee"), "stds.schema-org.CreativeWork")
-        self.assertEqual(cw["editor"], {"@type": "Person", "name": "Neel Banerjee"})
+        cw = assertion(build(reviewed_by="TechShu Reviewer"), "stds.schema-org.CreativeWork")
+        self.assertEqual(cw["editor"], {"@type": "Person", "name": "TechShu Reviewer"})
 
     def test_review_timestamp_defaults_to_creation_when_not_given(self):
-        data = assertion(build(reviewed_by="Neel"), "c2pa.ai-disclosure")
+        data = assertion(build(reviewed_by="TechShu Reviewer"), "c2pa.ai-disclosure")
         self.assertEqual(data["reviewed_at"], CREATED)
 
     def test_explicit_review_timestamp_is_kept(self):
         later = "2026-08-11T14:30:00Z"
-        data = assertion(build(reviewed_by="Neel", reviewed_at=later), "c2pa.ai-disclosure")
+        data = assertion(build(reviewed_by="TechShu Reviewer", reviewed_at=later), "c2pa.ai-disclosure")
         self.assertEqual(data["reviewed_at"], later)
 
 
@@ -117,7 +117,7 @@ class TestModelProvenance(unittest.TestCase):
 
 class TestManifestStaysValid(unittest.TestCase):
     def test_core_assertions_survive_the_addition(self):
-        labels = [a["label"] for a in build(reviewed_by="Neel")["assertions"]]
+        labels = [a["label"] for a in build(reviewed_by="TechShu Reviewer")["assertions"]]
         for required in ("c2pa.actions.v2", "stds.schema-org.CreativeWork",
                          "c2pa.ai-disclosure"):
             self.assertIn(required, labels)
