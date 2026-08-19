@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+> **TechShu line.** This repository is the TechShu-maintained line of the plugin,
+> rebranded in August 2026 by Indus Net TechShu Digital Pvt. Ltd. Entries below
+> predating the rebrand describe the original releases and may reference features
+> (sponsor links, star CTAs, personal social handles, the suite-brand keyword)
+> that the TechShu line has since removed.
+
 ## [1.25.1] - 2026-08-17
 
 ### Fixed — schema-clean hooks manifest (suite-wide fix from digital-marketing-pro#9)
@@ -1049,7 +1055,7 @@ Honest position from v1.8.5 onwards: **Claude Code (CLI + IDE extensions) + Anth
 
 - **Hero rewritten** — leads with "Open-source agency-grade social media production engine" positioning, badges row (version 1.8.1, license, stars, forks, issues, last-commit, Cowork-compatible, EU AI Act Article 50 ready, 5 platforms), install command at top
 - **plugin.json description** rewritten to be 1700+ chars covering the four creative modes, Vertex AI Nano Banana Pro + WaveSpeed Kling v3.0 Pro stack, 5-platform install matrix, May 2026 channel pack, techshu.ai attribution
-- **plugin.json keywords expanded 17 → 47** for Claude marketplace + Codex/Cursor/Copilot directory search. Added: `social-media-automation`, `social-media-marketing`, `content-production`, `ai-image`, `ai-video`, `vertex-ai`, `nano-banana-pro`, `kling-v3`, `wavespeed`, `veo-3`, `runway-gen-4`, `carousel-generator`, `brand-guidelines`, `agency-operations`, `marketing-automation`, `marketing-plugin`, `ai-marketing`, `synthid`, `article-50`, `deepfake-disclosure`, `instagram`, `tiktok`, `linkedin`, `threads`, `claude-code-plugin`, `claude-skills`, `agent-skills`, `openai-codex`, `cursor-plugin`, `github-copilot`, `antigravity`, `mcp`, `neelverse`.
+- **plugin.json keywords expanded 17 → 47** for Claude marketplace + Codex/Cursor/Copilot directory search. Added: `social-media-automation`, `social-media-marketing`, `content-production`, `ai-image`, `ai-video`, `vertex-ai`, `nano-banana-pro`, `kling-v3`, `wavespeed`, `veo-3`, `runway-gen-4`, `carousel-generator`, `brand-guidelines`, `agency-operations`, `marketing-automation`, `marketing-plugin`, `ai-marketing`, `synthid`, `article-50`, `deepfake-disclosure`, `instagram`, `tiktok`, `linkedin`, `threads`, `claude-code-plugin`, `claude-skills`, `agent-skills`, `openai-codex`, `cursor-plugin`, `github-copilot`, `antigravity`, `mcp`.
 - **TechShu Marketing Suite table** corrected: DMP "149 skills" → "150 skills"; ContentForge description expanded to mention fact-checker + humanizer + C2PA `.docx` signing
 
 ### Fixed
