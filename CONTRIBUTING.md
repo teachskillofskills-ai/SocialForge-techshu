@@ -1,6 +1,19 @@
 # Contributing to SocialForge
 
-Thank you for your interest in contributing to SocialForge!
+This document covers how to contribute to SocialForge.
+
+> **Who this is for.** These repositories are the TechShu line of the marketing plugins:
+> maintained by the TechShu AI team at Indus Net TechShu Digital Pvt. Ltd. for TechShu
+> delivery teams. Changes normally come from inside TechShu — branch in this repository
+> rather than forking. The repositories are public so colleagues can install without a
+> GitHub account; outside issues and pull requests are welcome but are reviewed on
+> TechShu's roadmap, not a community one.
+>
+> If you are a marketer rather than a developer, you do not need this document — see the
+> README for installing and using the plugin.
+
+---
+
 
 ## Code of Conduct
 
@@ -29,7 +42,7 @@ Thank you for your interest in contributing to SocialForge!
 
 ### Pull Request Process
 
-1. Fork the repository
+1. Branch from `main` in this repository (TechShu staff), or fork it (outside contributors)
 2. Create a feature branch: `git checkout -b feature/your-feature`
 3. Make changes following the coding standards below
 4. Test your changes (see TESTING-GUIDE.md)

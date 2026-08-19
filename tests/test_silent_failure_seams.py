@@ -47,6 +47,11 @@ def _load(name, filename):
     return mod
 
 
+_HAS_DEP = importlib.util.find_spec("playwright") is not None
+_DEP_MSG = "playwright not installed (render_preview.py renders with it)"
+
+
+@unittest.skipUnless(_HAS_DEP, _DEP_MSG)
 class TestPreviewRefusesToInventSuccess(unittest.TestCase):
     def _run(self, extra_args, out_name):
         with tempfile.TemporaryDirectory() as td:

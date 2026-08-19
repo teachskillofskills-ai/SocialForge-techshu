@@ -4,7 +4,7 @@
 
 Run `/socialforge:new-month` → `/socialforge:generate-all` → `/socialforge:review`. Asset-first compositing keeps brand photos pixel-faithful while AI generates the scene around them. Per-platform copy adaptation handles Instagram + TikTok + LinkedIn + Threads + X + Facebook + YouTube Shorts in one pass. C2PA signing happens before review. No more "AI enhanced our logo into something else" disasters.
 
-Open-source agency-grade social media production engine — **20 skills · 25 commands · 5 agents · 28 scripts · an opt-in catalog of 10 HTTP connectors (zero auto-connected) · 0 global hooks**. AI image (Vertex AI Nano Banana Pro), AI video (WaveSpeed Kling v3.0 Pro), human-in-the-loop review galleries. Built for agencies and in-house teams running monthly content calendars. Installs on **Claude Code** (CLI + IDE), **Anthropic Cowork**, **OpenAI Codex**, **Cursor 2.5+**, **GitHub Copilot CLI**, **Google Antigravity 2.0**, **Hermes Agent**, and **OpenClaw** + 35+ Agent Skills platforms.
+Agency-grade social media production engine for TechShu delivery teams — **20 skills · 25 commands · 5 agents · 28 scripts · an opt-in catalog of 10 HTTP connectors (zero auto-connected) · 0 global hooks**. AI image (Vertex AI Nano Banana Pro), AI video (WaveSpeed Kling v3.0 Pro), human-in-the-loop review galleries. Built for agencies and in-house teams running monthly content calendars. Installs on **Claude Code** (CLI + IDE), **Anthropic Cowork**, **OpenAI Codex**, **Cursor 2.5+**, **GitHub Copilot CLI**, **Google Antigravity 2.0**, **Hermes Agent**, and **OpenClaw** + 35+ Agent Skills platforms.
 
 [![Version](https://img.shields.io/badge/version-1.25.1-blue.svg)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)

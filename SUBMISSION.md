@@ -6,7 +6,7 @@
 > Plugins Directory) lives in `docs/distribution/submission-bundle.md`.
 
 **Plugin:** SocialForge
-**Version at submission:** 1.13.1
+**Version at submission:** 1.25.1
 **Submitter:** Indus Net TechShu Digital Pvt. Ltd.
 **Repository:** https://github.com/teachskillofskills-ai/SocialForge-techshu
 **Marketplace:** https://github.com/teachskillofskills-ai/techshu-marketplace

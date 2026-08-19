@@ -15,9 +15,7 @@ Prepared 2026-08-16. Items marked **[owner action]** need the account holder.
 
 - **Display name:** SocialForge
 - **Category:** Social media / Creative
-- **Short description:** Social media creative pipeline — 20 skills and 5
-  agents for platform-ready posts, carousels, image/video assets, and
-  compliance-gated delivery.
+- **Short description:** Social media creative pipeline for TechShu delivery teams — 20 skills and 5 agents for platform-ready posts, carousels, image/video assets, and compliance-gated delivery.
 - **Long description:** A month of social content as a governed pipeline:
   calendar ideation fed by measured performance (never anecdotes), platform-
   adapted copy, image/video generation with human-in-the-loop approval at every
