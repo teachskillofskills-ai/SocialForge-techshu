@@ -18,7 +18,7 @@ The latest minor release of SocialForge receives security fixes. Older minor ver
 
 Use GitHub's [Private Security Advisory](https://github.com/teachskillofskills-ai/SocialForge-techshu/security/advisories/new) feature to report privately. The TechShu AI team will be notified directly and can collaborate with you on a fix before disclosure.
 
-If you cannot use Private Security Advisories, contact the TechShu AI team via [techshu.ai](https://techshu.ai) with the subject line `[SF Security]`.
+If you cannot use Private Security Advisories, contact the TechShu AI team at solutions@techshu.com with the subject line `[SF Security]`.
 
 ### What to include
 
